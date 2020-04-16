@@ -84,11 +84,11 @@ hr:hover:before {
 }
 hr:before {
   position: absolute;
-  top: -10px;
+  top: -20px;
   left: 5%;
   z-index: 1;
   color: #49b1f5;
-  content: '\f0c4';
+  content: '\f21c';
   font-style: normal;
   font-variant: normal;
   font-size: 20px;
@@ -4590,7 +4590,7 @@ img {
   background-color: #ff7242;
 }
 #vcomment textarea {
-  background: url("https://s2.ax1x.com/2020/03/08/3z6veU.png") 100% 100% no-repeat;
+  background: url("/img/comment_bg.png") 100% 100% no-repeat;
 }
 #vcomment .vimg {
   -webkit-transition: all 0.3s;
