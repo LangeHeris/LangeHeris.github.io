@@ -31,6 +31,31 @@
     
     
     <entry>
+      <title>Mabinogi Sever研究日志</title>
+      <link href="/2020/06/01/MabinogiSever/"/>
+      <url>/2020/06/01/MabinogiSever/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="服务端结构"><a href="#服务端结构" class="headerlink" title="服务端结构"></a>服务端结构</h1><h2 id="主要结构"><a href="#主要结构" class="headerlink" title="主要结构"></a>主要结构</h2><p>DB_XMLServer<br>Authenticator<br>LoginServer<br>Coordinator<br>GameServer<br>NpcClient</p><h2 id="服务端启动顺序及其作用"><a href="#服务端启动顺序及其作用" class="headerlink" title="服务端启动顺序及其作用"></a>服务端启动顺序及其作用</h2><ol><li>DB_XMLServer\XMLDB.exe</li><li>Authenticator\Authenticator_Console.exe</li><li>LoginServer\LoginServer.exe setting:”file://data/features.xml=”[]”</li><li>Coordinator\Coordinator.exe setting:”file://data/features.xml=”[]”</li><li>GameServer\GameServer.exe setting:”file://data/features.xml</li><li>NPCClient\ClientD.exe [IP 端口] setting:”file://data/features.xml=[]  [batchjob]</li></ol><p>3和4 调用服务器频道的数据，channelindexinfo。</p><p>5和6 调用”系统提示”的数据，分别为gamesever skill standard 三个部分的系统提示信息。<br>还有NPC对话的文本，NPC名，地名，怪物编号和对话文本，道具名等相关代码</p><p>#数据存储</p><h2 id="DB-XMLServer-存放玩家数据"><a href="#DB-XMLServer-存放玩家数据" class="headerlink" title="DB_XMLServer 存放玩家数据"></a>DB_XMLServer 存放玩家数据</h2><p>例如账号account，角色character，宠物pet，农场family，公会guild，房子house 等等。</p><p>character文件夹下存放角色数据 ，可编辑角色的头衔、技能、关键字、道具、任务、三维、等级……</p><p>修改后重新登录服务器即可生效。</p><h2 id="Authenticator-创建角色卡"><a href="#Authenticator-创建角色卡" class="headerlink" title="Authenticator 创建角色卡"></a>Authenticator 创建角色卡</h2><p>DataGenerator.exe 生成角色或宠物卡片</p><p>datagenerator.config.xml 储存DataGenerator.exe的文本信息</p><h2 id="LoginServer"><a href="#LoginServer" class="headerlink" title="LoginServer"></a>LoginServer</h2><p>生成服务器主机的信息日志</p><p>游戏登陆运行环境，例如频道名称、服务器IP地址、数据库端口等等.</p><p>ServerInfo.ini 可以设置</p><p>The name of the Server.</p><p>The Login port for the server (Must be open)</p><p>NPC Client Port</p><p>Coordinator Port</p><p>XMLDB Database </p><p>XMLDB Database Port</p><h2 id="Coordinator"><a href="#Coordinator" class="headerlink" title="Coordinator"></a>Coordinator</h2><p>协调器，协调服务器端口、角色创建程序。</p><p>检测登陆程序IP和端口</p><p>检测数据库地址和端口</p><h2 id="GameSever"><a href="#GameSever" class="headerlink" title="GameSever"></a>GameSever</h2><p>存放游戏系统、技能数据的库</p><p>##NPCClient</p><p>专门给游戏服务器刷怪的NPC账号所使用的客户端。</p><h1 id="踩坑记录"><a href="#踩坑记录" class="headerlink" title="踩坑记录"></a>踩坑记录</h1><p>利用代码获得的关键字和任务会导致整条主线无法正常进行，目前只能通过正常游戏流程攻略。<br>建议多备份角色数据，或者直接修改角色数据。</p><p>任务发放时间看的是电脑时间。（也就是主机时间）</p><p>部分利用代码获得的任务道具，NPC无法识别。</p><p>已知修改游戏任务代码也无法让不能正常进行的任务强制执行。（我当时改的可能是代码副本，游戏没有调用23333）</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">if (me.HaveKeyword(&#96;g1_paradise&#96;) &amp;&amp; me.HaveKeyword(&#96;g1_10&#96;))</span><br><span class="line">&#123;</span><br><span class="line">me.AddKeyword(&#96;g1_medal_of_fomor&#96;);&#x2F;&#x2F;마족의 메달</span><br><span class="line">&#x2F;&#x2F;me.RemoveKeyword(&#96;g1_paradise&#96;);&#x2F;&#x2F;낙원</span><br><span class="line"></span><br><span class="line">me.AddKeyword(&#96;g1_11&#96;);</span><br><span class="line">me.RemoveKeyword(&#96;g1_10&#96;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;*</span><br><span class="line">dungeon _dungeon &#x3D; me.GetCurrentDungeon();</span><br><span class="line"></span><br><span class="line">if (_dungeon.IsValid())</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">me.AddKeyword(&#96;skill_rest&#96;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int region, x, y;</span><br><span class="line">_dungeon.GetBossRoomPos(region, x, y);&#x2F;&#x2F;던전 중심좌표를 받아오기</span><br><span class="line"></span><br><span class="line">me.Move(region, x, y-600);&#x2F;&#x2F;리더의 위치를 배치</span><br><span class="line"></span><br><span class="line">character member0, member1;</span><br><span class="line"></span><br><span class="line">member0 &#x3D; (character)_cMemberList.GetValue(0); &#x2F;&#x2F;구경꾼 1</span><br><span class="line"></span><br><span class="line">if (member0.IsValid())</span><br><span class="line">&#123;</span><br><span class="line">me.AddKeyword(&#96;skill_range&#96;);</span><br><span class="line">member0.Move(region, x+200, y-900);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">member1 &#x3D; (character)_cMemberList.GetValue(1); &#x2F;&#x2F;구경꾼 2</span><br><span class="line"></span><br><span class="line">if (member1.IsValid())</span><br><span class="line">&#123;</span><br><span class="line">me.AddKeyword(&#96;skill_instrument&#96;);</span><br><span class="line">member1.Move(region, x-200, y-900);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">*&#x2F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 游戏 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 研究日志 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SSR 搭建与免流</title>
       <link href="/2020/05/01/ssr/"/>
       <url>/2020/05/01/ssr/</url>
