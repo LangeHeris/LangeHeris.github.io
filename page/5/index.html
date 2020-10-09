@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Soul Stream - Nothing is True. Everything is permitted.</title><meta name="description" content="万物皆虚，万事皆允。"><meta name="author" content="Lange Heris"><meta name="copyright" content="Lange Heris"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="crossorigin"/><link rel="preconnect" href="https://hm.baidu.com"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="bKYNYaC3N5"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Soul Stream"><meta name="twitter:description" content="万物皆虚，万事皆允。"><meta name="twitter:image" content="http://langeheris.github.io/img/avatar.jpg"><meta property="og:type" content="website"><meta property="og:title" content="Soul Stream"><meta property="og:url" content="http://langeheris.github.io/page/5/"><meta property="og:site_name" content="Soul Stream"><meta property="og:description" content="万物皆虚，万事皆允。"><meta property="og:image" content="http://langeheris.github.io/img/avatar.jpg"><meta property="article:published_time" content="2020-10-09T09:53:53.099Z"><meta property="article:modified_time" content="2020-10-09T09:53:53.099Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = 'false'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="canonical" href="http://langeheris.github.io/page/5/"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?009444a024f29811d7378276af465b8e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-160039268-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://langeheris.github.io/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: 'false',
+  isFontAwesomeV5: false,
+  isPhotoFigcaption: false
+  
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isSidebar: false  
+  }</script><noscript><style>
+#page-header {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.jpg'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">275</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">17</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="http://tool.langeheris.top:81" target="_blank" rel="noopener"><i class="fa-fw fa fa-map"></i><span> WEB导航</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 视频</span></a></li><li><a class="site-page" href="http://47.92.32.195:8080" target="_blank" rel="noopener"><i class="fa-fw fa fa-cloud-upload"></i><span> NPS端口</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><div class="full_page" id="nav" style="background-image: url(https://i.loli.net/2020/08/31/Ff9vULEHnlTPMQz.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">Soul Stream</a></span><span class="pull_right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="http://tool.langeheris.top:81" target="_blank" rel="noopener"><i class="fa-fw fa fa-map"></i><span> WEB导航</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 视频</span></a></li><li><a class="site-page" href="http://47.92.32.195:8080" target="_blank" rel="noopener"><i class="fa-fw fa fa-cloud-upload"></i><span> NPS端口</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="site-info"><h1 id="site_title">Soul Stream</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/LangeHeris" target="_blank" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a><a class="social-icon" href="mailto:Lange982843972@outlook.com" target="_blank" title="mail"><i class="fa fa-envelope" aria-hidden="true"></i></a><a class="social-icon" href="https://space.bilibili.com/3492318" target="_blank" title="Bilibili"><i class="fa fa-bold" aria-hidden="true"></i></a></div></div><div id="scroll_down"><i class="fa fa-angle-down scroll-down-effects"></i></div></div><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/10/09/chapter099/short05/06/" title="chapter099/short05/06">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="chapter099/short05/06"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/09/chapter099/short05/06/" title="chapter099/short05/06">chapter099/short05/06</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-10-09 17:50:46"><i class="fa fa-calendar" aria-hidden="true"></i>2020-10-09</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-10-08 13:05:05"><i class="fa fa-history" aria-hidden="true"></i>2020-10-08</span></time></div><div class="content">『剣聖と雷光の銀華乱舞』
+前篇——有这样一把，名为『龙剑』的剑。
+世上名剑有数，冠以龙剑之名者独绝。
+世上圣剑有数，冠以龙剑之名者独绝。
+世上魔剑有数，冠以龙剑之名者独绝。
+那正是亲龙王国露格尼卡里『剑圣』代代相传的龙剑。
+有云，其剑猎杀了数千只龙，痛饮龙血。
+有云，其剑由剑神亲自馈赠，守护神寓于其 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/10/09/chapter099/short05/05/" title="chapter099/short05/05">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="chapter099/short05/05"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/09/chapter099/short05/05/" title="chapter099/short05/05">chapter099/short05/05</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-10-09 17:50:46"><i class="fa fa-calendar" aria-hidden="true"></i>2020-10-09</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-10-08 13:05:05"><i class="fa fa-history" aria-hidden="true"></i>2020-10-08</span></time></div><div class="content">『剑鬼恋谭　婚礼之日』
+前篇在踏入庭院的一瞬间，柔和而又温暖的风拂面而来。
+甜美的花香掠过鼻腔，花瓣随风飞舞着，消失于晴天中。
+正值当季，整个庭院繁花似锦，反映出宅邸主人的兴趣。
+虽然花坛里混杂着大大小小类型迥异的花朵，但它们都处于容易打理的位置，区域分的很清晰。每朵花都面向阳光照射过来的方向，鲜艳 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/10/09/chapter099/short05/04/" title="chapter099/short05/04">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="chapter099/short05/04"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/09/chapter099/short05/04/" title="chapter099/short05/04">chapter099/short05/04</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-10-09 17:50:46"><i class="fa fa-calendar" aria-hidden="true"></i>2020-10-09</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-10-08 13:05:05"><i class="fa fa-history" aria-hidden="true"></i>2020-10-08</span></time></div><div class="content">『剑鬼恋谭　那之后的两人』
+前篇——那是个沉浸于昏暗、干燥的空气中的地方。寂静又寒冷的空间。有的仅仅是拼命绞出最后一丝白光的结晶灯和用又冷又硬的石头打造的墙壁和床。四下流溢的寒风恰好是身体能够忍受的程度，让人不禁想到外面应该已经是冬季了。
+「————」
+已经过去了很久了吧，一直持续着与季节和时间无缘 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/10/09/chapter099/short05/03/" title="chapter099/short05/03">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="chapter099/short05/03"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/09/chapter099/short05/03/" title="chapter099/short05/03">chapter099/short05/03</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-10-09 17:50:46"><i class="fa fa-calendar" aria-hidden="true"></i>2020-10-09</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-10-08 13:05:05"><i class="fa fa-history" aria-hidden="true"></i>2020-10-08</span></time></div><div class="content">『雷姆极为平凡而幸福的一天』
+作为罗兹瓦尔邸佣人头领，亦是首席女仆的雷姆早晨起得很早。
+罗兹瓦尔邸共有三栋，雷姆在东栋的一间私房内醒来时，外面依然是夜色正深的拂晓。
+「────」
+遥远的东方泛起清晨的气息，黑色的夜空夹杂着微弱的光线。仿佛听到了黎明的脚步声，躺睡在床上的少女安静地睁开了眼睛。
+娇小的 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/10/09/chapter099/short05/02/" title="chapter099/short05/02">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="chapter099/short05/02"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/09/chapter099/short05/02/" title="chapter099/short05/02">chapter099/short05/02</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-10-09 17:50:46"><i class="fa fa-calendar" aria-hidden="true"></i>2020-10-09</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-10-08 13:05:05"><i class="fa fa-history" aria-hidden="true"></i>2020-10-08</span></time></div><div class="content">『——佩特拉所见的世界』
+——对佩特拉・雷蒂来说，世界是非常狭小，即已完成的东西。
+佩特拉出生于梅扎斯边境伯的领地内，小村子『阿拉姆』里的雷蒂家。
+佩特拉既没有被授予加护，也没有诞生在富裕的家庭里。只是在极其平凡的村子里，在极其平凡的一个家庭中，作为一位极其平凡的乡村姑娘，健康地成长起来。
+阿拉姆村 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/10/09/chapter099/short05/01/" title="chapter099/short05/01">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="chapter099/short05/01"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/09/chapter099/short05/01/" title="chapter099/short05/01">chapter099/short05/01</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-10-09 17:50:46"><i class="fa fa-calendar" aria-hidden="true"></i>2020-10-09</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-10-08 13:05:05"><i class="fa fa-history" aria-hidden="true"></i>2020-10-08</span></time></div><div class="content">『my fair bad lady』
+「呐，昴你听说了吗？明天那个『流浪的天才厨师』要过来喔！」
+「……什么？」
+面对双眼焕发着光彩的爱蜜莉娅，昴大大地歪下头反问。
+地点在罗兹瓦尔宅邸的中庭，时间是早饭前的大清早。如此清爽的早晨，连招呼都还没打，爱蜜莉娅饱含期待的神情和发言就先直击而来。
+整齐五官与 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/10/09/chapter099/short04/README/" title="chapter099/short04/README">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="chapter099/short04/README"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/09/chapter099/short04/README/" title="chapter099/short04/README">chapter099/short04/README</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-10-09 17:50:46"><i class="fa fa-calendar" aria-hidden="true"></i>2020-10-09</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-10-08 13:05:05"><i class="fa fa-history" aria-hidden="true"></i>2020-10-08</span></time></div><div class="content">短篇集　04
+『剑鬼恋歌　一幕』
+『剑鬼恋歌　二幕』
+『剑鬼恋歌　三幕』
+『剑鬼恋歌　四幕』
+『剑鬼恋歌　五幕』
+『剑鬼恋歌　六幕』
+『剑鬼恋歌　七幕』
+『剑鬼恋歌　幕间』
+『剑鬼恋歌　落幕』
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/10/09/chapter099/short04/09/" title="chapter099/short04/09">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="chapter099/short04/09"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/09/chapter099/short04/09/" title="chapter099/short04/09">chapter099/short04/09</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-10-09 17:50:46"><i class="fa fa-calendar" aria-hidden="true"></i>2020-10-09</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-10-08 13:05:05"><i class="fa fa-history" aria-hidden="true"></i>2020-10-08</span></time></div><div class="content">『剑鬼恋歌　落幕』
+——两年的岁月过去。
+对许多人来说，这两年是从剑圣的初征开始算起。不过对少数的相关者而言，这个开始要从距离初征后的几个礼拜才开始算。
+「剑鬼」失踪，以及代替他开始快速进攻的「剑圣」。
+为剑神所爱的一名少女，引导王国走向千军万马也到不了的结局。
+王国军耗费将近十年都无法平息的「亚人 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/10/09/chapter099/short04/08/" title="chapter099/short04/08">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="chapter099/short04/08"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/09/chapter099/short04/08/" title="chapter099/short04/08">chapter099/short04/08</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-10-09 17:50:46"><i class="fa fa-calendar" aria-hidden="true"></i>2020-10-09</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-10-08 13:05:05"><i class="fa fa-history" aria-hidden="true"></i>2020-10-08</span></time></div><div class="content">『剑鬼恋歌　幕间』
+卡萝・雷玫迪斯第一次遇到特蕾希雅，是在十四岁的时候。
+雷玫迪斯家代代都侍奉会诞生「剑圣」的阿斯特雷亚家。卡萝也是自懂事起就亲近剑，遵从家规磨练使命感和技术。
+当「剑圣」弗莱巴尔・范・阿斯特雷亚的「剑圣加持」被下一任继任者承袭时，当时的卡萝就被赋予了随侍在对方身侧的职责。
+执行职务 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/10/09/chapter099/short04/07/" title="chapter099/short04/07">     <img class="post_bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="chapter099/short04/07"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/09/chapter099/short04/07/" title="chapter099/short04/07">chapter099/short04/07</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-10-09 17:50:46"><i class="fa fa-calendar" aria-hidden="true"></i>2020-10-09</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-10-08 13:05:05"><i class="fa fa-history" aria-hidden="true"></i>2020-10-08</span></time></div><div class="content">『剑鬼恋歌　七幕』
+这阵子，卓格夫队出现一个火热话题。
+是跟队伍主干有关的大事，每名队员都能切身感受到极大变化——甚至可以说是骤变。
+「——拉兹洛，退下。」
+用剑接住斧击的威尔海姆命令队员。刚好是被叫到名字的队员被敌人猛攻逼到紧要关头的时候，察觉到队员有难的威尔海姆如风一般奔回来，边为他承担敌人攻势 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-fw fa-chevron-left" aria-hidden="true"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-fw fa-chevron-right" aria-hidden="true"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.jpg'" alt="avatar"/><div class="author-info__name">Lange Heris</div><div class="author-info__description">万物皆虚，万事皆允。</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">275</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">17</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">6</div></a></div></div><div class="card-info-bookmark is-center"><a class="bookmark button--primary button--animated" id="bookmark-it" href="javascript:;" title="加入书签" target="_self"><i class="fa fa-bookmark" aria-hidden="true"></i><span>加入书签</span></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/LangeHeris" target="_blank" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a><a class="social-icon" href="mailto:Lange982843972@outlook.com" target="_blank" title="mail"><i class="fa fa-envelope" aria-hidden="true"></i></a><a class="social-icon" href="https://space.bilibili.com/3492318" target="_blank" title="Bilibili"><i class="fa fa-bold" aria-hidden="true"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fa fa-bullhorn card-announcement-animation" aria-hidden="true"></i><span>公告</span></div><div class="announcement_content">图片和样式加载不出来，先刷新几遍，不行就换谷歌浏览器！</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fa fa-history" aria-hidden="true"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/2020/10/09/chapter099/special/bd/05/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="chapter099/special/bd/05" alt="chapter099/special/bd/05"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/10/09/chapter099/special/bd/05/" title="chapter099/special/bd/05">chapter099/special/bd/05</div><time class="aside-post_meta post-meta__date" title="发表于 2020-10-09 17:50:46">2020-10-09</time></div></a></div><div class="aside-recent-post"><a href="/2020/10/09/chapter099/special/bd/04/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="chapter099/special/bd/04" alt="chapter099/special/bd/04"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/10/09/chapter099/special/bd/04/" title="chapter099/special/bd/04">chapter099/special/bd/04</div><time class="aside-post_meta post-meta__date" title="发表于 2020-10-09 17:50:46">2020-10-09</time></div></a></div><div class="aside-recent-post"><a href="/2020/10/09/chapter099/special/bd/03/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="chapter099/special/bd/03" alt="chapter099/special/bd/03"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/10/09/chapter099/special/bd/03/" title="chapter099/special/bd/03">chapter099/special/bd/03</div><time class="aside-post_meta post-meta__date" title="发表于 2020-10-09 17:50:46">2020-10-09</time></div></a></div><div class="aside-recent-post"><a href="/2020/10/09/chapter099/special/bd/02/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="chapter099/special/bd/02" alt="chapter099/special/bd/02"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/10/09/chapter099/special/bd/02/" title="chapter099/special/bd/02">chapter099/special/bd/02</div><time class="aside-post_meta post-meta__date" title="发表于 2020-10-09 17:50:46">2020-10-09</time></div></a></div><div class="aside-recent-post"><a href="/2020/10/09/chapter099/special/bd/01/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="chapter099/special/bd/01" alt="chapter099/special/bd/01"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/10/09/chapter099/special/bd/01/" title="chapter099/special/bd/01">chapter099/special/bd/01</div><time class="aside-post_meta post-meta__date" title="发表于 2020-10-09 17:50:46">2020-10-09</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fa fa-folder-open" aria-hidden="true"></i><span>分类</span></div><ul class="aside-category-list">
+            <li class="aside-category-list-item"><a class="aside-category-list-link" href="/categories/JavaScript/"><span class="aside-category-list-name">JavaScript</span><span class="aside-category-list-count">2</span></a></li><li class="aside-category-list-item"><a class="aside-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"><span class="aside-category-list-name">前端开发</span><span class="aside-category-list-count">1</span></a></li><li class="aside-category-list-item"><a class="aside-category-list-link" href="/categories/%E6%95%99%E7%A8%8B/"><span class="aside-category-list-name">教程</span><span class="aside-category-list-count">3</span></a></li><li class="aside-category-list-item"><a class="aside-category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/"><span class="aside-category-list-name">游戏</span><span class="aside-category-list-count">1</span></a></li><li class="aside-category-list-item"><a class="aside-category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/"><span class="aside-category-list-name">笔记</span><span class="aside-category-list-count">1</span></a></li><li class="aside-category-list-item"><a class="aside-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><span class="aside-category-list-name">计算机网络</span><span class="aside-category-list-count">1</span></a></li>
+                       
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fa fa-tags" aria-hidden="true"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Git/" style="font-size: 16px; color: #999">Git</a> <a href="/tags/JavaScript/" style="font-size: 16px; color: #999">JavaScript</a> <a href="/tags/Mabinogi/" style="font-size: 16px; color: #999">Mabinogi</a> <a href="/tags/NAT/" style="font-size: 16px; color: #999">NAT</a> <a href="/tags/NPS/" style="font-size: 16px; color: #999">NPS</a> <a href="/tags/SSR/" style="font-size: 16px; color: #999">SSR</a> <a href="/tags/VPN/" style="font-size: 16px; color: #999">VPN</a> <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 16px; color: #999">内网穿透</a> <a href="/tags/%E5%87%AF%E5%B0%94%E7%89%B9%E7%A5%9E%E8%AF%9D/" style="font-size: 16px; color: #999">凯尔特神话</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" style="font-size: 16px; color: #999">学习资料</a> <a href="/tags/%E5%AE%9E%E6%88%98/" style="font-size: 16px; color: #999">实战</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 24px; color: #99a9bf">教程</a> <a href="/tags/%E6%97%A7%E6%96%87%E6%90%AC%E8%BF%90/" style="font-size: 16px; color: #999">旧文搬运</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E8%80%83%E7%A9%B6/" style="font-size: 16px; color: #999">游戏考究</a> <a href="/tags/%E6%BA%90%E7%A0%81/" style="font-size: 16px; color: #999">源码</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 20px; color: #99a1ac">笔记</a> <a href="/tags/%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/" style="font-size: 16px; color: #999">网页布局</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fa fa-archive" aria-hidden="true"></i><span>归档</span></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/"><span class="archive-list-date">十月 2020</span><span class="archive-list-count">266</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/"><span class="archive-list-date">六月 2020</span><span class="archive-list-count">2</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/"><span class="archive-list-date">五月 2020</span><span class="archive-list-count">1</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/"><span class="archive-list-date">四月 2020</span><span class="archive-list-count">2</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/"><span class="archive-list-date">三月 2020</span><span class="archive-list-count">4</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fa fa-line-chart" aria-hidden="true"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">275</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已运行时间 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" start_date="2/1/2020 00:00:00">     </div></div><div class="webinfo-item"><div class="webinfo-site-wordcount-name">本站总字数 :</div><div class="webinfo-site-wordcount">2542.2k</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://i.loli.net/2020/08/31/Ff9vULEHnlTPMQz.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By Lange Heris</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">到底了...</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script id="ribbon_piao" mobile="true" src="/js/third-party/piao.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script><script src="/js/search/local-search.js"></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleEffect = true
+if (subtitleEffect) { 
+  var typed = new Typed("#subtitle", {
+    strings: '万物皆虚&#44;万事皆允。,Nothing is True. Everything is permitted.'.split(","),
+    startDelay: 300,
+    typeSpeed: 150,
+    loop: true,
+    backSpeed: 50
+  })
+} else {
+  document.getElementById("subtitle").innerHTML = '万物皆虚&#44;万事皆允。'
+}</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"left","width":100,"height":200},"mobile":{"show":"flase"},"react":{"opacity":0.7},"log":false});</script></body></html>
