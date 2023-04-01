@@ -8,7 +8,7 @@
 <meta property="og:image" content="http://langeheris.github.io/img/avatar.jpg">
 <meta property="article:author" content="Lange Heris">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://langeheris.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://langeheris.github.io/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="bKYNYaC3N5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+<meta name="twitter:image" content="http://langeheris.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://langeheris.github.io/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
   hm.src = "https://hm.baidu.com/hm.js?009444a024f29811d7378276af465b8e";
@@ -27,7 +27,7 @@ gtag('config', 'UA-160039268-1');
   root: '/',
   algolia: {"appId":"78LXNWIQ9Q","apiKey":"7013fe0b26507ea2b3d9028aac6dfad6","indexName":"soulstream","hits":{"per_page":6},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
   localSearch: undefined,
-  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
   noticeOutdate: undefined,
   highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
   copy: {
@@ -39,7 +39,7 @@ gtag('config', 'UA-160039268-1');
     homepage: false,
     post: false
   },
-  runtime: '天',
+  runtime: '',
   date_suffix: {
     just: '刚刚',
     min: '分钟前',
@@ -69,7 +69,7 @@ gtag('config', 'UA-160039268-1');
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-04-01 21:28:40'
+  postUpdate: '2023-04-02 05:31:01'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -126,12 +126,18 @@ gtag('config', 'UA-160039268-1');
       document.head.appendChild(script)
     })
   
-    win.getCSS = url => new Promise((resolve, reject) => {
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
       const link = document.createElement('link')
       link.rel = 'stylesheet'
       link.href = url
-      link.onload = () => resolve()
-      link.onerror = () => reject()
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
       document.head.appendChild(link)
     })
   
@@ -167,7 +173,7 @@ gtag('config', 'UA-160039268-1');
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><link rel="stylesheet" href="/css/minimal.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/404.png'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/logs/"><i class="fa-fw fas fa-commenting"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-image"></i><span> 相册</span></a></li><li><a class="site-page child" href="/steamgames/"><i class="fa-fw fab fa-steam"></i><span> 游戏</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://z3.ax1x.com/2021/03/31/cAqNiq.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Soul Stream"><img class="site-icon" src="/img/favicon.png"/><span class="site-name">Soul Stream</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/logs/"><i class="fa-fw fas fa-commenting"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-image"></i><span> 相册</span></a></li><li><a class="site-page child" href="/steamgames/"><i class="fa-fw fab fa-steam"></i><span> 游戏</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Soul Stream</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="mailto:langeheris@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://github.com/LangeHeris" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2020/04/01/flex-box/" title="FLex弹性布局总结"><img class="post-bg" src="https://pic1.zhimg.com/80/v2-c22d535114e477f3d314d6ea26a7c0ad_720w.jpeg" onerror="this.onerror=null;this.src='/img/404.png'" alt="FLex弹性布局总结"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/01/flex-box/" title="FLex弹性布局总结">FLex弹性布局总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-03-31T16:00:00.000Z" title="发表于 2020-04-01 00:00:00">2020-04-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/">网页布局</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/2020/04/01/flex-box/#post-comment"><span class="valine-comment-count" data-xid="/2020/04/01/flex-box/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">Flex布局传统布局处理布局的传统解决方案，是基于盒状模型。
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><link rel="stylesheet" href="/css/minimal.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/logs/"><i class="fa-fw fas fa-commenting"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-image"></i><span> 相册</span></a></li><li><a class="site-page child" href="/steamgames/"><i class="fa-fw fab fa-steam"></i><span> 游戏</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://i.loli.net/2021/03/31/aclrXGb9PmuIUsj.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Soul Stream"><img class="site-icon" src="/img/favicon.png"/><span class="site-name">Soul Stream</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/logs/"><i class="fa-fw fas fa-commenting"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-image"></i><span> 相册</span></a></li><li><a class="site-page child" href="/steamgames/"><i class="fa-fw fab fa-steam"></i><span> 游戏</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Soul Stream</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="mailto:langeheris@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://github.com/LangeHeris" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2020/04/01/flex-box/" title="FLex弹性布局总结"><img class="post-bg" src="https://pic1.zhimg.com/80/v2-c22d535114e477f3d314d6ea26a7c0ad_720w.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="FLex弹性布局总结"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/01/flex-box/" title="FLex弹性布局总结">FLex弹性布局总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-03-31T16:00:00.000Z" title="发表于 2020-04-01 00:00:00">2020-04-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/">网页布局</a></span></div><div class="content">Flex布局传统布局处理布局的传统解决方案，是基于盒状模型。
 依赖 display+ position+ float 对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。
 
 像传统的float布局：
@@ -181,7 +187,7 @@ Flex 处理Flex 是 Flexible Box 的缩写，意为”弹性布局”，用来�
 2009年，W3C 提出的一种新方案，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。
 使用弹性盒子可以任何尺寸的屏幕上改变其和其子元素的尺寸填充屏幕可用空间。一个弹性框容器将延展它的子元素以填充可用空间，并且缩小它的子元素来避免溢出。
 
-   ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2020/03/30/Computer-Network/" title="计算机网络"><img class="post-bg" src="https://pic4.zhimg.com/80/v2-88ce62dba06d7107868e6f0beda86570_720w.jpeg" onerror="this.onerror=null;this.src='/img/404.png'" alt="计算机网络"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/30/Computer-Network/" title="计算机网络">计算机网络</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-03-29T16:00:00.000Z" title="发表于 2020-03-30 00:00:00">2020-03-30</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">学习资料</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/2020/03/30/Computer-Network/#post-comment"><span class="valine-comment-count" data-xid="/2020/03/30/Computer-Network/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">计算机网络概念计算机网路功能
+   ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2020/03/30/Computer-Network/" title="计算机网络"><img class="post-bg" src="https://pic4.zhimg.com/80/v2-88ce62dba06d7107868e6f0beda86570_720w.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机网络"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/30/Computer-Network/" title="计算机网络">计算机网络</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-03-29T16:00:00.000Z" title="发表于 2020-03-30 00:00:00">2020-03-30</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">学习资料</a></span></div><div class="content">计算机网络概念计算机网路功能
     数据通信（连通性）
     资源共享 硬件 软件 数据通信（连通性）
     分布式处理 多台计算机各自承担同一工作任务的不同部分,用户可以根据需要合理选择网络资源，就近快速地进行处理。
@@ -210,7 +216,7 @@ Flex 处理Flex 是 Flexible Box 的缩写，意为”弹性布局”，用来�
     按传输技术分：
         广播式网络——所有的 节点/主机 共享通信信道
         点对点式网络——使用分组存储转发和路由选择机制
-     ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2020/03/28/Intranet-penetration/" title="内网穿透——NPS"><img class="post-bg" src="https://pic1.zhimg.com/80/v2-801f11f4b2bf9a7061965ac94bc8c9bb_720w.jpeg" onerror="this.onerror=null;this.src='/img/404.png'" alt="内网穿透——NPS"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/28/Intranet-penetration/" title="内网穿透——NPS">内网穿透——NPS</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-03-27T16:00:00.000Z" title="发表于 2020-03-28 00:00:00">2020-03-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">内网穿透</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/NAT/">NAT</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/NPS/">NPS</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/2020/03/28/Intranet-penetration/#post-comment"><span class="valine-comment-count" data-xid="/2020/03/28/Intranet-penetration/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">前言——关于内网穿透什么是内网穿透？百度百科：
+     ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2020/03/28/Intranet-penetration/" title="内网穿透——NPS"><img class="post-bg" src="https://pic1.zhimg.com/80/v2-801f11f4b2bf9a7061965ac94bc8c9bb_720w.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="内网穿透——NPS"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/28/Intranet-penetration/" title="内网穿透——NPS">内网穿透——NPS</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-03-27T16:00:00.000Z" title="发表于 2020-03-28 00:00:00">2020-03-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">内网穿透</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/NAT/">NAT</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/NPS/">NPS</a></span></div><div class="content">前言——关于内网穿透什么是内网穿透？百度百科：
 
 内网穿透，即NAT穿透，网络连接时术语，计算机是局域网内时，外网与内网的计算机节点需要连接通信，有时就会出现不支持内网穿透。就是说映射端口，能让外网的电脑找到处于内网的电脑，提高下载速度。不管是内网穿透还是其他类型的网络穿透，都是网络穿透的统一方法来研究和解决。
 
@@ -253,7 +259,7 @@ GO
 
 
 lanproxyp
-不支持 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2020/03/11/Elin-annals/" title="爱琳编年史"><img class="post-bg" src="https://pic2.zhimg.com/80/v2-9319c1a9ec3dc769c6be36b06b2d480e_720w.jpeg" onerror="this.onerror=null;this.src='/img/404.png'" alt="爱琳编年史"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/11/Elin-annals/" title="爱琳编年史">爱琳编年史</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-03-10T16:00:00.000Z" title="发表于 2020-03-11 00:00:00">2020-03-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%B8%B8%E6%88%8F%E7%9B%B8%E5%85%B3/">游戏相关</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Mabinogi/">Mabinogi</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E5%87%AF%E5%B0%94%E7%89%B9%E7%A5%9E%E8%AF%9D/">凯尔特神话</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%B8%B8%E6%88%8F%E8%80%83%E7%A9%B6/">游戏考究</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%97%A7%E6%96%87%E6%90%AC%E8%BF%90/">旧文搬运</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/2020/03/11/Elin-annals/#post-comment"><span class="valine-comment-count" data-xid="/2020/03/11/Elin-annals/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">
+不支持 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2020/03/11/Elin-annals/" title="爱琳编年史"><img class="post-bg" src="https://pic2.zhimg.com/80/v2-9319c1a9ec3dc769c6be36b06b2d480e_720w.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="爱琳编年史"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/11/Elin-annals/" title="爱琳编年史">爱琳编年史</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-03-10T16:00:00.000Z" title="发表于 2020-03-11 00:00:00">2020-03-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%B8%B8%E6%88%8F%E7%9B%B8%E5%85%B3/">游戏相关</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Mabinogi/">Mabinogi</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E5%87%AF%E5%B0%94%E7%89%B9%E7%A5%9E%E8%AF%9D/">凯尔特神话</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%B8%B8%E6%88%8F%E8%80%83%E7%A9%B6/">游戏考究</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%97%A7%E6%96%87%E6%90%AC%E8%BF%90/">旧文搬运</a></span></div><div class="content">
 为了把对洛奇剧情感兴趣的读者带入到独一无二的精彩世界中，将会把洛奇世界线及故事进行整合追溯。 
 
 本文章含有大量 个人观点 个人猜测 人名地名不符合 - 历史混淆，加之资料整理周期等因素不能保证资料正确性，在此也请洛奇资深爱好者进行补充以及更正。
@@ -270,7 +276,7 @@ lanproxyp
 
 法利阿斯内，拥有创世之力的至高神阿托恩创造了众多世界，于是宇宙诞生了。
 曾经管理世界的宇宙法则正向现今的因果法则转变，法利阿斯成为了宇宙的起源。
-阿托恩后来又 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2020/03/07/Hexo-Create/" title="Hexo搭建"><img class="post-bg" src="/img/default_cover_post.jpg" onerror="this.onerror=null;this.src='/img/404.png'" alt="Hexo搭建"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/07/Hexo-Create/" title="Hexo搭建">Hexo搭建</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-03-06T16:00:00.000Z" title="发表于 2020-03-07 00:00:00">2020-03-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/2020/03/07/Hexo-Create/#post-comment"><span class="valine-comment-count" data-xid="/2020/03/07/Hexo-Create/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">前置条件1.安装nodejsNode.js官方下载地址 
+阿托恩后来又 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2020/03/07/Hexo-Create/" title="Hexo搭建"><img class="post-bg" src="/img/default_cover_post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo搭建"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/07/Hexo-Create/" title="Hexo搭建">Hexo搭建</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-03-06T16:00:00.000Z" title="发表于 2020-03-07 00:00:00">2020-03-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a></span></div><div class="content">前置条件1.安装nodejsNode.js官方下载地址 
 默认安装即可，新版本自带npm。
 注：安装时可能会报错。
 例如：Windows安装Nodejs会报错：2503、2502
@@ -283,7 +289,7 @@ window具体安装过程： https://www.cnblogs.com/xueweisuoyong/p/11914045.htm
 3.注册一个Github账号[Gitub官网]（ https://github.com ）
 安装Hexo安装hexo前还是要安装一下cnpm，毕竟npm安装插件是从国外服务器下载，受网络波动影响大，不仅下载慢还容易出错。注：CNPM跟NPM用法完全一致，只是在执行命令时将npm改为CNPM。
 CMD输入以下代码安装cnpm
-np ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/404.png'" alt="avatar"/></div><div class="author-info__name">Lange Heris</div><div class="author-info__description">要啥啥没，爱咋咋地。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/3492318"><i class="fab fa-bilibili"></i><span>Bilibili</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:langeheris@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://github.com/LangeHeris" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">15</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-01-31T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">149.3k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-04-01T13:28:40.151Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://z3.ax1x.com/2021/03/31/cAqNiq.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Lange Heris</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a herf="http://langeheris.github.io"><span>langeheris.github.io</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+np ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="avatar"/></div><div class="author-info__name">Lange Heris</div><div class="author-info__description">要啥啥没，爱咋咋地。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/3492318"><i class="fab fa-bilibili"></i><span>Bilibili</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:langeheris@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://github.com/LangeHeris" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-comment-dots"></i><span>最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">15</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">149.3k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-04-01T21:31:00.937Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2021/03/31/aclrXGb9PmuIUsj.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Lange Heris</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a herf="http://langeheris.github.io"><span>langeheris.github.io</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
   if (typeof pangu === 'object') pangu.autoSpacingPage()
   else {
     getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
@@ -301,47 +307,130 @@ function panguInit () {
   }
 }
 
-document.addEventListener('DOMContentLoaded', panguInit)</script><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script><div class="js-pjax"><script>(() => {
-  function loadValine () {
-    function initValine () {
-      let initData = {
-        el: '#vcomment',
-        appId: 'k8wl1SQ3KAzoDHfqRbgfOUX2-gzGzoHsz',
-        appKey: 'IKiKisGyg2hHzwX42e0xRDRw',
-        serverURLs: ''
-      }
-      
-      const valine = new Valine(initData)
-    }
-
-    if (typeof Valine === 'function') initValine() 
-    else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
-  }
-
-  window.pjax ? loadValine() : window.addEventListener('load', loadValine)
-})()</script><script>function subtitleType () {
-  if (true) { 
-    window.typed = new Typed("#subtitle", {
-      strings: ["万物皆虚&#44;万事皆允。","Nothing is True. Everything is permitted."],
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
       startDelay: 300,
       typeSpeed: 150,
       loop: true,
-      backSpeed: 50
-    })
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  if (true) {
+    typedJSFn.init(["万物皆虚&#44;万事皆允。","Nothing is True. Everything is permitted."])
   } else {
     document.getElementById("subtitle").innerHTML = '万物皆虚&#44;万事皆允。'
   }
 }
+typedJSFn.run(subtitleType)</script></div><script src="https://cdn.jsdelivr.net/npm/blueimp-md5/js/md5.min.js"></script><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
 
-if (true) {
-  if (typeof Typed === 'function') {
-    subtitleType()
-  } else {
-    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
   }
-} else {
-  subtitleType()
-}</script></div><div class="aplayer no-destroy" data-id="4902786037" data-server="netease" data-type="playlist" data-order="list" data-mini="true" data-mutex="true" data-lrctype="false" data-fixed="true" data-autoplay="true" data-theme="#000"> </div><style type="text/css">.framework-info{visibility:hidden;}</style><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  const getIcon = (icon, mail) => {
+    if (icon) return icon
+    let defaultIcon = '?d=identicon'
+    let iconUrl = `https://gravatar.loli.net/avatar/${md5(mail.toLowerCase()) + defaultIcon}`
+    return iconUrl
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = () => {
+    const serverURL = 'https://k8wl1SQ3.api.lncldglobal.com'
+
+    var settings = {
+      "method": "GET",
+      "headers": {
+        "X-LC-Id": 'k8wl1SQ3KAzoDHfqRbgfOUX2-gzGzoHsz',
+        "X-LC-Key": 'IKiKisGyg2hHzwX42e0xRDRw',
+        "Content-Type": "application/json"
+      },
+    }
+
+    fetch(`${serverURL}/1.1/classes/Comment?limit=6&order=-createdAt`,settings)
+      .then(response => response.json())
+      .then(data => {
+        const valineArray = data.results.map(function (e) {
+          return {
+            'avatar': getIcon(e.QQAvatar, e.mail),
+            'content': changeContent(e.comment),
+            'nick': e.nick,
+            'url': e.url + '#' + e.objectId,
+            'date': e.updatedAt,
+          }
+        })
+        saveToLocal.set('valine-newest-comments', JSON.stringify(valineArray), 10/(60*24))
+        generateHtml(valineArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      }) 
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('valine-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><div class="aplayer no-destroy" data-id="4902786037" data-server="netease" data-type="playlist" data-order="list" data-mini="true" data-mutex="true" data-lrctype="false" data-fixed="true" data-autoplay="true" data-theme="#000"> </div><style type="text/css">.framework-info{visibility:hidden;}</style><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
 
 var pjax = new Pjax({
   elements: 'a:not([target="_blank"])',
@@ -408,4 +497,4 @@ document.addEventListener('pjax:error', (e) => {
   if (e.request.status === 404) {
     pjax.loadUrl('/404.html')
   }
-})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script></div></body></html>
