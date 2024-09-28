@@ -265,7 +265,7 @@ btf.addGlobalFn('pjaxSend', () => {
   const loadValine = async () => {
     if (typeof Valine === 'function') initValine()
     else {
-      await btf.getScript('https://cdn.langeheris.top/Valine.min.js')
+      await btf.getScript('https://cdn.langeheris.top/js/Valine.min.js')
       initValine()
     }
   }
