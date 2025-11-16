@@ -1,0 +1,410 @@
+<!DOCTYPE html><html class="hide-aside" lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Mabinogi ENB-DOF | Soul Stream</title><meta name="author" content="Lange Heris"><meta name="copyright" content="Lange Heris"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0000FF"><meta name="description" content="这是针对上一篇文章Mabinogi画质增强指南 的补充。 所用原始文件的下载地址：Master+Effect+1.4+Shader+Suite+prefinale 注：此文件由Marty McFly整理，仅适用于Generic enb v0.076的着色器套件。 使用说明 InstallationSTEP 1. 先安装Generic enb v0.076 STEP 2. Master Effec">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mabinogi ENB-DOF">
+<meta property="og:url" content="http://langeheris.github.io/2022/11/07/MB-ENB-DOF/index.html">
+<meta property="og:site_name" content="Soul Stream">
+<meta property="og:description" content="这是针对上一篇文章Mabinogi画质增强指南 的补充。 所用原始文件的下载地址：Master+Effect+1.4+Shader+Suite+prefinale 注：此文件由Marty McFly整理，仅适用于Generic enb v0.076的着色器套件。 使用说明 InstallationSTEP 1. 先安装Generic enb v0.076 STEP 2. Master Effec">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://picx.zhimg.com/80/v2-b1c8e8fb5f5bb52825199f18ae0b1a6b_720w.png">
+<meta property="article:published_time" content="2022-11-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-11-16T17:52:01.612Z">
+<meta property="article:author" content="Lange Heris">
+<meta property="article:tag" content="Mabinogi">
+<meta property="article:tag" content="ENB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picx.zhimg.com/80/v2-b1c8e8fb5f5bb52825199f18ae0b1a6b_720w.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Mabinogi ENB-DOF",
+  "url": "http://langeheris.github.io/2022/11/07/MB-ENB-DOF/",
+  "image": "https://picx.zhimg.com/80/v2-b1c8e8fb5f5bb52825199f18ae0b1a6b_720w.png",
+  "datePublished": "2022-11-06T16:00:00.000Z",
+  "dateModified": "2025-11-16T17:52:01.612Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Lange Heris",
+      "url": "http://langeheris.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://langeheris.github.io/2022/11/07/MB-ENB-DOF/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="/css/fontawesome-v651-all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0000FF')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0000FF')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"78LXNWIQ9Q","apiKey":"7013fe0b26507ea2b3d9028aac6dfad6","indexName":"soulstream","hitsPerPage":6,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，耗时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":true,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyloadPlugin: false,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Mabinogi ENB-DOF',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/font.css"><style type="text/css">.framework-info{visibility:hidden;}</style><meta name="generator" content="Hexo 5.4.2"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+btf.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+
+</script><link rel="stylesheet" href="/css/minimal.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="web_bg" style="background-image: url(https://picx.zhimg.com/80/v2-46914ac1044193f87102d7a3ecd9e264_720w.jpeg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://pic1.zhimg.com/80/v2-3ef788176dd1a9e61334777cb25fb528_720w.jpeg?source=d16d100b" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="avatar"/ loading='lazy'></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fa fa-list"></i><span> 章略</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 总览</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/discovery/"><i class="fa-fw fas fa-link"></i><span> 发现</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-user-circle"></i><span> 关隅</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-image"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/steamgames/"><i class="fa-fw fab fa-steam"></i><span> Steam</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://picx.zhimg.com/80/v2-b1c8e8fb5f5bb52825199f18ae0b1a6b_720w.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/favicon.png" alt="Logo" loading='lazy'><span class="site-name">Soul Stream</span></a><a class="nav-page-title" href="/"><span class="site-name">Mabinogi ENB-DOF</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fa fa-list"></i><span> 章略</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 总览</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/discovery/"><i class="fa-fw fas fa-link"></i><span> 发现</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-user-circle"></i><span> 关隅</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-image"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/steamgames/"><i class="fa-fw fab fa-steam"></i><span> Steam</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Mabinogi ENB-DOF</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2022-11-06T16:00:00.000Z" title="发表于 2022-11-07 00:00:00">2022-11-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%B8%B8%E6%88%8F%E7%9B%B8%E5%85%B3/">游戏相关</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2022/11/07/MB-ENB-DOF/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/2022/11/07/MB-ENB-DOF/" itemprop="commentCount"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p><img src="https://img.langeheris.top/file/1733845674880_B3AE47VelTuKqxO.png" loading='lazy'></p>
+<p><strong>这是针对上一篇文章<a target="_blank" rel="noopener" href="https://langeheris.top/2022/10/10/MB-ENB-ReShade">Mabinogi画质增强指南</a> 的补充。</strong></p>
+<p>所用原始文件的下载地址：<a target="_blank" rel="noopener" href="http://www.mediafire.com/download/ztqa1hvxam0aq02/Master+Effect+1.4+Shader+Suite+prefinale.7z">Master+Effect+1.4+Shader+Suite+prefinale</a></p>
+<p>注：此文件由<a target="_blank" rel="noopener" href="https://www.facebook.com/MartyMcModding">Marty McFly</a>整理，仅适用于Generic enb v0.076的着色器套件。</p>
+<h1 id="使用说明-Installation"><a href="#使用说明-Installation" class="headerlink" title="使用说明 Installation"></a>使用说明 Installation</h1><p><strong>STEP 1.</strong> 先安装<a href="https://langeheris.github.io/2022/10/10/MB-ENB-ReShade/index.html#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80-DownLoad">Generic enb v0.076</a></p>
+<p><strong>STEP 2.</strong> Master Effect 1.4 Shader Suite压缩包内有3个DOF版本。</p>
+<p>A版本-<a target="_blank" rel="noopener" href="https://bbs.3dmgame.com/thread-3368876-1-1.html">gp65cj042 DOF</a><br>B版本-Matso DOF<br>C版本-PetkaGtA DOF</p>
+<p>上面列出的三个版本中选择一个。除DOF效果外，功能基本相同。因为ENB只支持8个通道，无法一次性实现所有3个DOF版本的ENB，所以Marty McFly创建了3个不同的DOF版本。</p>
+<blockquote>
+<p> A版本是一个高度可配置的极端质量动态DOF。</p>
+<p> B版本是一个偏粉笔画(pastel-like)的DOF，适合摆拍截图。</p>
+<p> C版本是一个更简单的DOF，是不注重景深效果本身的轻度版本，适合常驻使用。</p>
+<p> A和B适合用于截图。</p>
+</blockquote>
+<div class="note danger simple"><p>三个版本均不能直接对Mabinogi使用，需要在enbseries_mastereffect.ini中调整参数。</p>
+</div>
+
+<div class="note warning simple"><p>如果你不想自己调试，可以直接到文章末尾，下载我调试的B版本。<strong>经个人测试</strong>，<strong>个人</strong>认为A和C版本对Mabinogi不适配，因此只提供B版本的DOF。</p>
+</div>
+
+<p><strong>STEP 3.</strong> 将所选DOF文件夹内effect.txt、effect_functions.txt、enbseries_mastereffect.ini三个文件放入与enb文件同级的目录下。</p>
+<p><strong>STEP 4.</strong> 编辑<mark class="hl-label default">enbseries.ini</mark>文件，找到<mark class="hl-label default">[GLOBAL]</mark>部分，编辑<mark class="hl-label red">AlternativeDepth=</mark>的值，A和B版本需要将值设为1，C版本需要设为0。</p>
+<p><strong>STEP 5.</strong> 编辑<mark class="hl-label default">effect.txt</mark>文件，找到<mark class="hl-label red">ScreenSize=</mark>这一行设置你的分辨率。</p>
+<blockquote>
+<p>如果你的分辨率是1024x768，那么值应该设为<strong>float4 ScreenSize=float4(1024,(1/1024),(1024/768),(768/1024));</strong></p>
+</blockquote>
+<p><strong>关于enbseries_mastereffect.ini中效果的启用方法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#define EFFECT_XYZ       1      是启用效果</span><br><span class="line">#define EFFECT_XYZ       0      是禁用效果，或者用&quot;//&quot;注释掉</span><br></pre></td></tr></table></figure>
+
+<h1 id="配置说明-Matso-DOF"><a href="#配置说明-Matso-DOF" class="headerlink" title="配置说明 Matso DOF"></a>配置说明 Matso DOF</h1><p>针对B版本的配置文件说明，<a target="_blank" rel="noopener" href="https://bbs.3dmgame.com/forum.php?mod=viewthread&tid=3824502">参考资料</a></p>
+<p>下列表格以外的参数，没有额外的需求就不要改动。</p>
+<table>
+<thead>
+<tr>
+<th align="left">效果名称</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">SKYRIMDOF</td>
+<td>启用/禁用 景深</td>
+</tr>
+<tr>
+<td align="left">ENABLE_DOF</td>
+<td>静态景深(对Mabinogi无效)</td>
+</tr>
+<tr>
+<td align="left">ENABLE_FAST_DOF</td>
+<td>快速景深(静态景深和快速景深必须二选一)</td>
+</tr>
+<tr>
+<td align="left">ENABLE_SHARP</td>
+<td>锐化</td>
+</tr>
+<tr>
+<td align="left">ENABLE_CHROMA</td>
+<td>色彩饱和度(景深的额外色彩饱和度)</td>
+</tr>
+<tr>
+<td align="left">USE_CHROMA_DOF</td>
+<td>色相色差景深</td>
+</tr>
+<tr>
+<td align="left">USE_SMOOTH_DOF</td>
+<td>平滑景深</td>
+</tr>
+<tr>
+<td align="left">USE_BOKEH_DOF</td>
+<td>散景景深</td>
+</tr>
+<tr>
+<td align="left">USE_ANAMFLARE</td>
+<td>镜头变形</td>
+</tr>
+<tr>
+<td align="left">USE_DOUBLE_BLUR</td>
+<td>双倍模糊</td>
+</tr>
+<tr>
+<td align="left">SEED</td>
+<td><strong>donnot change it!</strong></td>
+</tr>
+<tr>
+<td align="left">PI</td>
+<td><strong>donnot change it!</strong></td>
+</tr>
+<tr>
+<td align="left">CHROMA_POW</td>
+<td>色度系数 这个值越大 对景深就有更大的色差影响</td>
+</tr>
+<tr>
+<td align="left">DOF_SCALE</td>
+<td><strong>donnot change it!</strong></td>
+</tr>
+<tr>
+<td align="left">FIRST_PASS</td>
+<td><strong>donnot change it!</strong></td>
+</tr>
+<tr>
+<td align="left">SECOND_PASS</td>
+<td><strong>donnot change it!</strong></td>
+</tr>
+<tr>
+<td align="left">THIRD_PASS</td>
+<td><strong>donnot change it!</strong></td>
+</tr>
+<tr>
+<td align="left">FOURTH_PASS</td>
+<td><strong>donnot change it!</strong></td>
+</tr>
+<tr>
+<td align="left">DOF(sd,sf)</td>
+<td><strong>donnot change it!</strong></td>
+</tr>
+<tr>
+<td align="left">fvChroma float3(R,G,B)</td>
+<td>颜色参数  调了后颜色会变化</td>
+</tr>
+<tr>
+<td align="left">fBaseRadius</td>
+<td>基圆半径  这个效果不明显</td>
+</tr>
+<tr>
+<td align="left">fFalloffRadius</td>
+<td>减少半径  这个是半径影响的最高值</td>
+</tr>
+<tr>
+<td align="left">fChromaPower</td>
+<td>色彩强度 色度矢量曲线</td>
+</tr>
+<tr>
+<td align="left">fvTexelSize</td>
+<td>设置分辨率大小</td>
+</tr>
+<tr>
+<td align="left">fFocusBias</td>
+<td>对焦偏差 较大值为近视，较小值为远视（镜头距离焦点的距离）</td>
+</tr>
+<tr>
+<td align="left">fApertureScale</td>
+<td>光圈孔径 影响图像模糊尺度（值越大，模糊越强烈）</td>
+</tr>
+<tr>
+<td align="left">fApertureCutoff</td>
+<td>光圈截止 管理DOF的光滑度（值越大使视野更加的宽广深入）</td>
+</tr>
+<tr>
+<td align="left">fApertureBias</td>
+<td>孔径偏差 在DOF中没有考虑距离 试一下零以下的值</td>
+</tr>
+<tr>
+<td align="left">fBokehCurve</td>
+<td>散景强度</td>
+</tr>
+<tr>
+<td align="left">fBokehLight</td>
+<td>散景亮度</td>
+</tr>
+</tbody></table>
+<h1 id="关于散景-fBokehCurve"><a href="#关于散景-fBokehCurve" class="headerlink" title="关于散景 fBokehCurve"></a>关于散景 fBokehCurve</h1><p>散景强度(fBokehCurve) 3.0是个比较安全的阈值，如无特别需求不建议超过这个值。</p>
+<p>过低的散景强度可能会让景深的模糊部分变得更模糊，因此建议不低于0.1</p>
+<p>以下是<strong>散景强度0.5</strong>的画面。</p>
+<p><img src="https://img.langeheris.top/file/1733846905515_rWfNVE2KgeiJyR1.png" alt="fBokehCurve 0.5" loading='lazy'></p>
+<p>以下是<strong>散景强度7.0</strong>对游戏画面的影响，主要体现在角色ID和黑屏转场，以及个别过场动画的字幕。</p>
+<p><img src="https://img.langeheris.top/file/1733846905431_l5GWfXvSpw9zneP.png" alt="fBokehCurve 7.0" loading='lazy'></p>
+<p><img src="https://img.langeheris.top/file/1733846900285_FkD4bTZMKALRY3n.png" alt="fBokehCurve 7.0 黑屏转场" loading='lazy'></p>
+<h1 id="效果预览-Preview"><a href="#效果预览-Preview" class="headerlink" title="效果预览 Preview"></a>效果预览 Preview</h1><div class="note warning simple"><p>此为个人调试过后的最终效果预览，实际效果需求请自行调整。</p>
+</div>
+
+<iframe src="//player.bilibili.com/player.html?aid=353365216&bvid=BV12X4y1S79L&cid=1049173588&page=1&danmaku=1&high_quality=1" width="100%" height="400" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"> </iframe>
+
+<details class="toggle" ><summary class="toggle-button" style="">效果对比 （测试版本）</summary><div class="toggle-content"><p><img src="https://img.langeheris.top/file/1733845632229_ag52TKwQeIXuYsS.png" alt="Vanilla" loading='lazy'><br><img src="https://img.langeheris.top/file/1733845678715_wJ9VRxWU6usrdBm.png" alt="ENB DOF" loading='lazy'></p>
+</div></details>
+<details class="toggle" ><summary class="toggle-button" style="">效果对比 （最终调试版本）</summary><div class="toggle-content"><p><img src="https://img.langeheris.top/file/1733846251606_TukUFx1gZRtdyWl.png" alt="Vanilla" loading='lazy'><br><img src="https://img.langeheris.top/file/1733846375151_RmAqIbUoa8JWE53.png" alt="ENB DOF" loading='lazy'><br><img src="https://img.langeheris.top/file/1733847091819_wMhzK2foVY8dZOv.png" alt="Vanilla" loading='lazy'><br><img src="https://img.langeheris.top/file/1733847091731_iZ4ATLSesbEjzvH.png" alt="ENB DOF" loading='lazy'></p>
+</div></details>
+
+<details class="toggle" ><summary class="toggle-button" style="">最终调试版本 效果预览</summary><div class="toggle-content"><p><img src="https://pica.zhimg.com/80/v2-86bb8f7338eff110386d58674df765cc_720w.png" loading='lazy'><br><img src="https://pic1.zhimg.com/80/v2-ef4b2b1283d278a35032a32a5e43bab8_720w.png" loading='lazy'><br><img src="https://picx1.zhimg.com/80/v2-12f849ed01966e390761930730740a3a_720w.png" loading='lazy'><br><img src="https://pica.zhimg.com/80/v2-6e13859b1d7f66de04ec606148286860_720w.png" loading='lazy'><br><img src="https://picx1.zhimg.com/80/v2-7d03437bc0af7e24bfaf7aa1236ff5e1_720w.png" loading='lazy'><br><img src="https://picx1.zhimg.com/80/v2-9c4b8cae55b0412e13eaca101e1dfc7b_720w.png" loading='lazy'><br><img src="https://picx1.zhimg.com/80/v2-9d37d65ab486366c0a3b59ddbd18dd55_720w.png" loading='lazy'><br><img src="https://pica.zhimg.com/80/v2-2138b62de2391daf018894fc4110cbb3_720w.png" loading='lazy'><br><img src="https://pica.zhimg.com/80/v2-876350b8e3b5c6d5bad44a8f106ff503_720w.png" loading='lazy'><br><img src="https://picx1.zhimg.com/80/v2-831a988d66340c5e068ba63a65d37423_720w.png" loading='lazy'><br><img src="https://picx1.zhimg.com/80/v2-8750727f7b527c5c950f536c8208111d_720w.png" loading='lazy'><br><img src="https://picx1.zhimg.com/80/v2-eff659ca62cb91d6aac5b11f81c332d9_720w.png" loading='lazy'><br><img src="https://pic1.zhimg.com/80/v2-1b7c1db54c7037b5dd376b199af53415_720w.png" loading='lazy'><br><img src="https://picx1.zhimg.com/80/v2-b60a84438c0e47608379a487ffe9c0c9_720w.png" loading='lazy'><br><img src="https://picx1.zhimg.com/80/v2-486f2dd6ae95296fbb990ab70c2be61b_720w.png" loading='lazy'></p>
+</div></details>
+
+<h1 id="下载地址-DownLoad"><a href="#下载地址-DownLoad" class="headerlink" title="下载地址 DownLoad"></a>下载地址 DownLoad</h1><blockquote>
+<p>最终调试版本，务必在阅读完使用说明后下载。</p>
+</blockquote>
+<a class="btn-beautify larger blue" target="_blank" rel="noopener" href="https://pan.baidu.com/s/1xjs5hPLjbQyQ_hvW9c2PIw?pwd=mabi" title="百度云"><i class="fa fa-cloud-download"></i><span>百度云</span></a>
+
+<a class="btn-beautify larger blue" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1SggMfP4Y6py2HLR-40dbcT-ur_QU7eZd" title="Google Drive"><i class="fab fa-google-drive"></i><span>Google Drive</span></a>
+
+<a class="btn-beautify larger blue" target="_blank" rel="noopener" href="http://cdn.langeheris.top/share/Matso_DOF.zip" title="直连"><i class="fas fa-download"></i><span>直连</span></a>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://langeheris.github.io">Lange Heris</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://langeheris.github.io/2022/11/07/MB-ENB-DOF/">http://langeheris.github.io/2022/11/07/MB-ENB-DOF/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://langeheris.github.io" target="_blank">Soul Stream</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Mabinogi/">Mabinogi</a><a class="post-meta__tags" href="/tags/ENB/">ENB</a></div><div class="post-share"><div class="social-share" data-image="https://picx.zhimg.com/80/v2-b1c8e8fb5f5bb52825199f18ae0b1a6b_720w.png" data-sites="twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2024/01/09/MB-Dunbarton-Overhaul/" title="Mabinogi Dunbarton Overhaul"><img class="cover" src="https://pic1.zhimg.com/v2-2f74c1a3421cd68d10e80a7eac7faa3c.png" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-09</div><div class="info-item-2">Mabinogi Dunbarton Overhaul</div></div><div class="info-2"><div class="info-item-1">服务器寿终正寝，在此修整重刊。 预览文件也放云盘里了。  这是2022.10.30备份的副本，因2023.3.28电脑中病毒，未备份的数据已永远丢失。 现在鸽了，所以就托管在这里。 这是基于Mabinogi-ENB的材质替换，没有适配过原版光照。 使用方法： # 开启优先读取DATAUseDataFolder = 1   内存补丁 → 开启优先读取DATA 将dss文件拖入这个路径：data\material\obj\dunbarton\flat\ 没有路径就自己创建。  要是内存补丁无了，就封包成IT格式。 可选：Adam 材质 - 取自HD视觉增强套件，与原版贴图相比，增强了纹理和对比度，对性能没有影响。删除了过旧与无用的材质，对建筑材质进行了分离。 DDS文件预览推荐使用 Honeyview 云盘备份： Dunbarton-Overhaul 密码：WX6M </div></div></div></a><a class="pagination-related" href="/2022/10/10/MB-ENB-ReShade/" title="Mabinogi 画质增强指南"><img class="cover" src="https://pic2.zhimg.com/80/v2-e40ec6a0c41aee518586981e639cc0eb_720w.png" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-10</div><div class="info-item-2">Mabinogi 画质增强指南</div></div><div class="info-2"><div class="info-item-1">概述 Description 文章内所使用图形修改工具的原始文件地址 ：  Boris·Vorontsov-ENBSeries-Graphic modifications-Generic  v0.076Crosire-ReShade v5.4.2SweetFX by CeeJay.dk（基于ReShade的版本） 本人只提供下载和使用建议，不负责使用后产生的各种问题。 观看前建议清理一下浏览器缓存。 如果想要额外实现景深效果，点这里。 使用后，会出现掉帧、游戏载入速度变慢、切换频道卡顿等现象，实属正常。  如果使用过程中出现眩晕、恶心、呕吐、眼疲劳等症状，为了您的身体健康建议您停止使用。   运行需求 Requirements 内存补丁：LPE V3.5.0 （已打包） 硬件需求：能开机，能运行Mabinogi。 操作系统，建议win10，显卡驱动建议更新一下。 N卡，古董级的可能用不了。 A卡，我没有A卡。 以后想起来了再加上。 其实只有第一条是重点。  兼容性需求可能与Tin不兼容，如果进游戏报错，就不要加载Tin.dll  可以与KoorimioPatch、SnowMira...</div></div></div></a><a class="pagination-related" href="/2020/03/11/Elin-annals/" title="爱琳编年史"><img class="cover" src="https://pic2.zhimg.com/80/v2-9319c1a9ec3dc769c6be36b06b2d480e_720w.jpeg" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-03-11</div><div class="info-item-2">爱琳编年史</div></div><div class="info-2"><div class="info-item-1"> 为了把对洛奇剧情感兴趣的读者带入到独一无二的精彩世界中，将会对洛奇时间线及故事进行整合与追溯。 本文章可能因为官方翻译和游戏版本差异而含有大量 个人观点、 个人猜测、 人名地名不符、  历史混淆等，加之资料整理周期等因素不能保证资料正确性，在此也请洛奇资深爱好者进行补充以及更正。 因本人语言能力有限，有叙述交待不周的地方请见谅，为了让大家更好理解剧情，本人将对世界线中的事件进行精简和拆分，请各位没有 深入了解游戏剧情 的玩家安心食用。 最后，感谢每一位为洛奇剧情做出贡献的玩家。 本文最早发布于2018.1.8 目前时间线的梳理截止于 G23(未完) ，有部分G25设定补充。  非初次访问者，须清理浏览器缓存后观看。    【异世界时期】异世界-迪尔纳诺，爱琳传说中的乐园，米莱西安初到时迪尔纳诺已处于荒废状态，所能移动地区的地理环境与迪尔科内尔大致相同，差别在于牧场要往东方平原、南方杜加德走廊、北方希德赫雪原的路都被栅栏封起来了，各建筑物也关起了门，能提供服务的NPC也只剩下托乌克 ，村庄外围的怪物区布满了 豺狼与 巨大沙虫，唯一的地下城也只有阿尔贝地下城。 -异世界初期-[宇宙...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E-Installation"><span class="toc-text">使用说明 Installation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E-Matso-DOF"><span class="toc-text">配置说明 Matso DOF</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%95%A3%E6%99%AF-fBokehCurve"><span class="toc-text">关于散景 fBokehCurve</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88-Preview"><span class="toc-text">效果预览 Preview</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80-DownLoad"><span class="toc-text">下载地址 DownLoad</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url(https://picx.zhimg.com/80/v2-b1c8e8fb5f5bb52825199f18ae0b1a6b_720w.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2025 By Lange Heris</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 5.4.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const initValine = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyValine = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const valineConfig = {
+      el: '#vcomment',
+      appId: 'k8wl1SQ3KAzoDHfqRbgfOUX2-gzGzoHsz',
+      appKey: 'IKiKisGyg2hHzwX42e0xRDRw',
+      avatar: 'identicon',
+      serverURLs: '',
+      emojiMaps: "",
+      visitor: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || window.location.pathname
+    }
+
+    new Valine(valineConfig)
+  }
+
+  const loadValine = async (el, path) => {
+    if (typeof Valine === 'function') {
+      initValine(el, path)
+    } else {
+      await btf.getScript('https://cdn.langeheris.top/js/Valine.min.js')
+      initValine(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Valine' === 'Valine'
+      ? window.shuoshuoComment = { loadComment: loadValine }
+      : window.loadOtherComment = loadValine
+    return
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><div class="aplayer no-destroy" data-id="4902786037" data-server="netease" data-type="playlist" data-order="list" data-mini="true" data-mutex="true" data-lrctype="false" data-fixed="true" data-autoplay="false" data-theme="#000000"> </div><link rel="stylesheet" href="/css/APlayer.min.css" media="print" onload="this.media='all'"><script src="/js/APlayer.min.js"></script><script src="/js/Meting.min.js"></script><script async data-pjax src="/"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div id="algolia-search-input"><div class="ais-SearchBox"><form class="ais-SearchBox-form" action="" role="search" novalidate=""><input class="ais-SearchBox-input" type="search" placeholder="搜索文章" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="512" aria-label="Search"/><button class="ais-SearchBox-submit" type="submit" title="Submit the search query" style="display:none;"><svg class="ais-SearchBox-submitIcon" width="10" height="10" viewBox="0 0 40 40" aria-hidden="true"><path d="M26.804 29.01c-2.832 2.34-6.465 3.746-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.96-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.59-.004 2.202-.61.61-1.597.61-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.26-5.936 13.26-13.26 0-7.32-5.937-13.257-13.26-13.257C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.26 13.258 13.26z"></path></svg></button></form></div><hr/><div id="algolia-search-results"><div id="algolia-hits"><div id="algolia-hits-empty" style="display:none;"></div><div class="ais-Hits" style="display:none;"><ol class="ais-Hits-list"></ol></div></div><div class="ais-Pagination" id="algolia-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="algolia-info"><span class="ais-Stats-text"></span><a class="algolia-poweredBy" href="https://www.algolia.com/?utm_source=algoliasearch.js&amp;utm_medium=website&amp;utm_content=localhost&amp;utm_campaign=poweredby" target="_blank" aria-label="Search by Algolia" rel="noopener noreferrer"><svg class="ais-PoweredBy-logo" height="1.2em" viewBox="0 0 572 64" style="width: auto;"><path fill="#36395A" d="M16 48.3c-3.4 0-6.3-.6-8.7-1.7A12.4 12.4 0 0 1 1.9 42C.6 40 0 38 0 35.4h6.5a6.7 6.7 0 0 0 3.9 6c1.4.7 3.3 1.1 5.6 1.1 2.2 0 4-.3 5.4-1a7 7 0 0 0 3-2.4 6 6 0 0 0 1-3.4c0-1.5-.6-2.8-1.9-3.7-1.3-1-3.3-1.6-5.9-1.8l-4-.4c-3.7-.3-6.6-1.4-8.8-3.4a10 10 0 0 1-3.3-7.9c0-2.4.6-4.6 1.8-6.4a12 12 0 0 1 5-4.3c2.2-1 4.7-1.6 7.5-1.6s5.5.5 7.6 1.6a12 12 0 0 1 5 4.4c1.2 1.8 1.8 4 1.8 6.7h-6.5a6.4 6.4 0 0 0-3.5-5.9c-1-.6-2.6-1-4.4-1s-3.2.3-4.4 1c-1.1.6-2 1.4-2.6 2.4-.5 1-.8 2-.8 3.1a5 5 0 0 0 1.5 3.6c1 1 2.6 1.7 4.7 1.9l4 .3c2.8.2 5.2.8 7.2 1.8 2.1 1 3.7 2.2 4.9 3.8a9.7 9.7 0 0 1 1.7 5.8c0 2.5-.7 4.7-2 6.6a13 13 0 0 1-5.6 4.4c-2.4 1-5.2 1.6-8.4 1.6Zm35.6 0c-2.6 0-4.8-.4-6.7-1.3a13 13 0 0 1-4.7-3.5 17.1 17.1 0 0 1-3.6-10.4v-1c0-2 .3-3.8 1-5.6a13 13 0 0 1 7.3-8.3 15 15 0 0 1 6.3-1.4A13.2 13.2 0 0 1 64 24.3c1 2.2 1.6 4.6 1.6 7.2V34H39.4v-4.3h21.8l-1.8 2.2c0-2-.3-3.7-.9-5.1a7.3 7.3 0 0 0-2.7-3.4c-1.2-.7-2.7-1.1-4.6-1.1s-3.4.4-4.7 1.3a8 8 0 0 0-2.9 3.6c-.6 1.5-.9 3.3-.9 5.4 0 2 .3 3.7 1 5.3a7.9 7.9 0 0 0 2.8 3.7c1.3.8 3 1.3 5 1.3s3.8-.5 5.1-1.3c1.3-1 2.1-2 2.4-3.2h6a11.8 11.8 0 0 1-7 8.7 16 16 0 0 1-6.4 1.2ZM80 48c-2.2 0-4-.3-5.7-1a8.4 8.4 0 0 1-3.7-3.3 9.7 9.7 0 0 1-1.3-5.2c0-2 .5-3.8 1.5-5.2a9 9 0 0 1 4.3-3.1c1.8-.7 4-1 6.7-1H89v4.1h-7.5c-2 0-3.4.5-4.4 1.4-1 1-1.6 2.1-1.6 3.6s.5 2.7 1.6 3.6c1 1 2.5 1.4 4.4 1.4 1.1 0 2.2-.2 3.2-.7 1-.4 1.9-1 2.6-2 .6-1 1-2.4 1-4.2l1.7 2.1c-.2 2-.7 3.8-1.5 5.2a9 9 0 0 1-3.4 3.3 12 12 0 0 1-5.3 1Zm9.5-.7v-8.8h-1v-10c0-1.8-.5-3.2-1.4-4.1-1-1-2.4-1.4-4.2-1.4a142.9 142.9 0 0 0-10.2.4v-5.6a74.8 74.8 0 0 1 8.6-.4c3 0 5.5.4 7.5 1.2s3.4 2 4.4 3.6c1 1.7 1.4 4 1.4 6.7v18.4h-5Zm12.9 0V17.8h5v12.3h-.2c0-4.2 1-7.4 2.8-9.5a11 11 0 0 1 8.3-3.1h1v5.6h-2a9 9 0 0 0-6.3 2.2c-1.5 1.5-2.2 3.6-2.2 6.4v15.6h-6.4Zm34.4 1a15 15 0 0 1-6.6-1.3c-1.9-.9-3.4-2-4.7-3.5a15.5 15.5 0 0 1-2.7-5c-.6-1.7-1-3.6-1-5.4v-1c0-2 .4-3.8 1-5.6a15 15 0 0 1 2.8-4.9c1.3-1.5 2.8-2.6 4.6-3.5a16.4 16.4 0 0 1 13.3.2c2 1 3.5 2.3 4.8 4a12 12 0 0 1 2 6H144c-.2-1.6-1-3-2.2-4.1a7.5 7.5 0 0 0-5.2-1.7 8 8 0 0 0-4.7 1.3 8 8 0 0 0-2.8 3.6 13.8 13.8 0 0 0 0 10.3c.6 1.5 1.5 2.7 2.8 3.6s2.8 1.3 4.8 1.3c1.5 0 2.7-.2 3.8-.8a7 7 0 0 0 2.6-2c.7-1 1-2 1.2-3.2h6.2a11 11 0 0 1-2 6.2 15.1 15.1 0 0 1-11.8 5.5Zm19.7-1v-40h6.4V31h-1.3c0-3 .4-5.5 1.1-7.6a9.7 9.7 0 0 1 3.5-4.8A9.9 9.9 0 0 1 172 17h.3c3.5 0 6 1.1 7.9 3.5 1.7 2.3 2.6 5.7 2.6 10v16.8h-6.4V29.6c0-2.1-.6-3.8-1.8-5a6.4 6.4 0 0 0-4.8-1.8c-2 0-3.7.7-5 2a7.8 7.8 0 0 0-1.9 5.5v17h-6.4Zm63.8 1a12.2 12.2 0 0 1-10.9-6.2 19 19 0 0 1-1.8-7.3h1.4v12.5h-5.1v-40h6.4v19.8l-2 3.5c.2-3.1.8-5.7 1.9-7.7a11 11 0 0 1 4.4-4.5c1.8-1 3.9-1.5 6.1-1.5a13.4 13.4 0 0 1 12.8 9.1c.7 1.9 1 3.8 1 6v1c0 2.2-.3 4.1-1 6a13.6 13.6 0 0 1-13.2 9.4Zm-1.2-5.5a8.4 8.4 0 0 0 7.9-5c.7-1.5 1.1-3.3 1.1-5.3s-.4-3.8-1.1-5.3a8.7 8.7 0 0 0-3.2-3.6 9.6 9.6 0 0 0-9.2-.2 8.5 8.5 0 0 0-3.3 3.2c-.8 1.4-1.3 3-1.3 5v2.3a9 9 0 0 0 1.3 4.8 9 9 0 0 0 3.4 3c1.4.7 2.8 1 4.4 1Zm27.3 3.9-10-28.9h6.5l9.5 28.9h-6Zm-7.5 12.2v-5.7h4.9c1 0 2-.1 2.9-.4a4 4 0 0 0 2-1.4c.4-.7.9-1.6 1.2-2.7l8.6-30.9h6.2l-9.3 32.4a14 14 0 0 1-2.5 5 8.9 8.9 0 0 1-4 2.8c-1.5.6-3.4.9-5.6.9h-4.4Zm9-12.2v-5.2h6.4v5.2H248Z"></path><path fill="#003DFF" d="M534.4 9.1H528a.8.8 0 0 1-.7-.7V1.8c0-.4.2-.7.6-.8l6.5-1c.4 0 .8.2.9.6v7.8c0 .4-.4.7-.8.7zM428 35.2V.8c0-.5-.3-.8-.7-.8h-.2l-6.4 1c-.4 0-.7.4-.7.8v35c0 1.6 0 11.8 12.3 12.2.5 0 .8-.4.8-.8V43c0-.4-.3-.7-.6-.8-4.5-.5-4.5-6-4.5-7zm106.5-21.8H528c-.4 0-.7.4-.7.8v34c0 .4.3.8.7.8h6.5c.4 0 .8-.4.8-.8v-34c0-.5-.4-.8-.8-.8zm-17.7 21.8V.8c0-.5-.3-.8-.8-.8l-6.5 1c-.4 0-.7.4-.7.8v35c0 1.6 0 11.8 12.3 12.2.4 0 .8-.4.8-.8V43c0-.4-.3-.7-.7-.8-4.4-.5-4.4-6-4.4-7zm-22.2-20.6a16.5 16.5 0 0 1 8.6 9.3c.8 2.2 1.3 4.8 1.3 7.5a19.4 19.4 0 0 1-4.6 12.6 14.8 14.8 0 0 1-5.2 3.6c-2 .9-5.2 1.4-6.8 1.4a21 21 0 0 1-6.7-1.4 15.4 15.4 0 0 1-8.6-9.3 21.3 21.3 0 0 1 0-14.4 15.2 15.2 0 0 1 8.6-9.3c2-.8 4.3-1.2 6.7-1.2s4.6.4 6.7 1.2zm-6.7 27.6c2.7 0 4.7-1 6.2-3s2.2-4.3 2.2-7.8-.7-6.3-2.2-8.3-3.5-3-6.2-3-4.7 1-6.1 3c-1.5 2-2.2 4.8-2.2 8.3s.7 5.8 2.2 7.8 3.5 3 6.2 3zm-88.8-28.8c-6.2 0-11.7 3.3-14.8 8.2a18.6 18.6 0 0 0 4.8 25.2c1.8 1.2 4 1.8 6.2 1.7s.1 0 .1 0h.9c4.2-.7 8-4 9.1-8.1v7.4c0 .4.3.7.8.7h6.4a.7.7 0 0 0 .7-.7V14.2c0-.5-.3-.8-.7-.8h-13.5zm6.3 26.5a9.8 9.8 0 0 1-5.7 2h-.5a10 10 0 0 1-9.2-14c1.4-3.7 5-6.3 9-6.3h6.4v18.3zm152.3-26.5h13.5c.5 0 .8.3.8.7v33.7c0 .4-.3.7-.8.7h-6.4a.7.7 0 0 1-.8-.7v-7.4c-1.2 4-4.8 7.4-9 8h-.1a4.2 4.2 0 0 1-.5.1h-.9a10.3 10.3 0 0 1-7-2.6c-4-3.3-6.5-8.4-6.5-14.2 0-3.7 1-7.2 3-10 3-5 8.5-8.3 14.7-8.3zm.6 28.4c2.2-.1 4.2-.6 5.7-2V21.7h-6.3a9.8 9.8 0 0 0-9 6.4 10.2 10.2 0 0 0 9.1 13.9h.5zM452.8 13.4c-6.2 0-11.7 3.3-14.8 8.2a18.5 18.5 0 0 0 3.6 24.3 10.4 10.4 0 0 0 13 .6c2.2-1.5 3.8-3.7 4.5-6.1v7.8c0 2.8-.8 5-2.2 6.3-1.5 1.5-4 2.2-7.5 2.2l-6-.3c-.3 0-.7.2-.8.5l-1.6 5.5c-.1.4.1.8.5 1h.1c2.8.4 5.5.6 7 .6 6.3 0 11-1.4 14-4.1 2.7-2.5 4.2-6.3 4.5-11.4V14.2c0-.5-.4-.8-.8-.8h-13.5zm6.3 8.2v18.3a9.6 9.6 0 0 1-5.6 2h-1a10.3 10.3 0 0 1-8.8-14c1.4-3.7 5-6.3 9-6.3h6.4zM291 31.5A32 32 0 0 1 322.8 0h30.8c.6 0 1.2.5 1.2 1.2v61.5c0 1.1-1.3 1.7-2.2 1l-19.2-17a18 18 0 0 1-11 3.4 18.1 18.1 0 1 1 18.2-14.8c-.1.4-.5.7-.9.6-.1 0-.3 0-.4-.2l-3.8-3.4c-.4-.3-.6-.8-.7-1.4a12 12 0 1 0-2.4 8.3c.4-.4 1-.5 1.6-.2l14.7 13.1v-46H323a26 26 0 1 0 10 49.7c.8-.4 1.6-.2 2.3.3l3 2.7c.3.2.3.7 0 1l-.2.2a32 32 0 0 1-47.2-28.6z"></path></svg></a></div></div></div></div><div id="search-mask"></div><script src="/js/algoliasearch-lite.umd.min.js"></script><script src="/js/search/algolia.js?v=5.5.2"></script></div></div></body></html>
